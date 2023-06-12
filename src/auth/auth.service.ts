@@ -1,4 +1,3 @@
-import { CreateItemDto } from './../items/dto/create-item.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';

@@ -5,11 +5,7 @@ import { ItemsModule } from './items/items.module';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [
-    ItemsModule,
-    AuthModule,
-    TypeOrmModule.forRoot(AppDataSource.options),
-  ],
+  imports: [ItemsModule, AuthModule, TypeOrmModule.forRoot(AppDataSource.options)],
   controllers: [],
   providers: [],
 })
