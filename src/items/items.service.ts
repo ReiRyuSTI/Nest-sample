@@ -1,10 +1,6 @@
 import { CreateItemDto } from './dto/create-item.dto';
-import {
-  Injectable,
-  InternalServerErrorException,
-  NotFoundException,
-} from '@nestjs/common';
-import { ItemStatus } from './item-status.enum';
+import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import { ItemStatus } from '../types/item-status.enum';
 
 import { v4 as uuid } from 'uuid';
 import { Item } from 'src/entities/item.entity';
@@ -13,9 +9,7 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class ItemsService {
-  constructor(
-    @InjectRepository(Item) private ItemRepository: Repository<Item>,
-  ) {}
+  constructor(@InjectRepository(Item) private ItemRepository: Repository<Item>) {}
 
   async findAll(): Promise<Item[]> {
     return await this.ItemRepository.find().catch((e) => {
