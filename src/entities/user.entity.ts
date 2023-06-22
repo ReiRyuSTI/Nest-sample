@@ -1,6 +1,7 @@
 import { UserStatus } from '../types/userState.enum';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Item } from './item.entity';
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class User {
@@ -11,6 +12,7 @@ export class User {
   username: string;
 
   @Column()
+  @Exclude({ toPlainOnly: true })
   password: string;
 
   @Column({ type: 'enum', enum: UserStatus, default: UserStatus.FREE })
@@ -18,7 +20,4 @@ export class User {
 
   @OneToMany(() => Item, (item) => item.user)
   items: Item[];
-
-  @Column()
-  userId: string;
 }

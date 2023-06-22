@@ -20,4 +20,7 @@ export class Item {
 
   @ManyToOne(() => User, (user) => user.items)
   user: User;
+
+  @Column()
+  userId: string;
 }
