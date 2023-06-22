@@ -8,10 +8,10 @@ import {
 import { ItemStatus } from '../types/item-status.enum';
 
 import { v4 as uuid } from 'uuid';
-import { Item } from 'src/entities/item.entity';
+import { Item } from '../entities/item.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User } from 'src/entities/user.entity';
+import { User } from '../entities/user.entity';
 
 @Injectable()
 export class ItemsService {

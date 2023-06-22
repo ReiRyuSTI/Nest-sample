@@ -14,9 +14,9 @@ import {
 import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/create-item.dto';
 import { Item } from '../entities/item.entity';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { GetUser } from 'src/auth/decorator/get-user.decorator';
-import { User } from 'src/entities/user.entity';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { GetUser } from '../auth/decorator/get-user.decorator';
+import { User } from '../entities/user.entity';
 
 @Controller('items')
 @UseInterceptors(ClassSerializerInterceptor)
